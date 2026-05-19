@@ -598,6 +598,84 @@
     text-transform: uppercase;
   }
 
+  /* ── Section 4: PRODUCT STATUS ── */
+  .status { text-align: center; }
+  .status h2 {
+    font-size: 34px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .status > .lede {
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin-bottom: 42px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+    text-align: left;
+  }
+  .status-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.04),
+      0 8px 20px -12px rgba(0,0,0,0.5);
+  }
+  .status-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .status-value {
+    font-size: 15px;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+  .status-note {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+  .status-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .status-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: rgba(20,22,29,0.5);
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .status-links a:hover {
+    border-color: var(--accent-dim);
+    color: var(--text-primary);
+    transform: translateY(-1px);
+  }
+  .status-links svg { width: 16px; height: 16px; }
+
   /* ── Section 4: GET STARTED ── */
   .start { text-align: center; }
   .start h2 {
@@ -928,6 +1006,18 @@
       <ellipse cx="9" cy="12" rx="1.2" ry="1.6" fill="currentColor"/>
       <ellipse cx="15" cy="12" rx="1.2" ry="1.6" fill="currentColor"/>
     </symbol>
+    <symbol id="ico-docs" viewBox="0 0 24 24">
+      <rect x="4" y="3" width="14" height="18" rx="1.5" stroke="currentColor" stroke-width="1.1" fill="none"/>
+      <line x1="7" y1="8" x2="15" y2="8" stroke="currentColor" stroke-width="1.1"/>
+      <line x1="7" y1="12" x2="15" y2="12" stroke="currentColor" stroke-width="1.1"/>
+      <line x1="7" y1="16" x2="13" y2="16" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M18 7 L20.5 9.5 L14.5 15.5 L12 16 L12.5 13.5 Z" stroke="currentColor" stroke-width="1.1" fill="none" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-code" viewBox="0 0 24 24">
+      <polyline points="9,7 4,12 9,17" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="15,7 20,12 15,17" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="13" y1="5" x2="11" y2="19" stroke="currentColor" stroke-width="1.1"/>
+    </symbol>
 
     <!-- Play (video placeholder) — mono-line triangle in a square-with-corners frame -->
     <symbol id="ico-play" viewBox="0 0 32 32">
@@ -951,6 +1041,7 @@
       <li><a href="#what">What</a></li>
       <li><a href="#why">Why</a></li>
       <li><a href="#demo">Demo</a></li>
+      <li><a href="#status">Status</a></li>
       <li><a href="#start">Start</a></li>
     </ul>
   </div>
@@ -970,7 +1061,7 @@
         <button class="terminal-copy" onclick="navigator.clipboard.writeText('npx bloxbox init roblox-rojo');this.textContent='copied';setTimeout(()=>this.textContent='copy',1500)">copy</button>
       </div>
       <div class="hero-sub">
-        Source available &nbsp;|&nbsp; <a href="#start">View on GitHub</a> &nbsp;|&nbsp; Templates for Roblox, Next.js, and generic projects
+        Source available &nbsp;|&nbsp; <a href="https://github.com/Metatronsdoob369/open-model-contracts/tree/main/boxstar-omc-bootstrap" target="_blank" rel="noopener noreferrer">Open Bootstrap Engine</a> &nbsp;|&nbsp; Templates for Roblox, Next.js, and generic projects
       </div>
     </div>
   </div>
@@ -1032,6 +1123,52 @@
 
 <div class="divider"></div>
 
+<!-- ── Section 4: PRODUCT STATUS ── -->
+<section class="status" id="status">
+  <div class="container">
+    <div class="section-label reveal" style="margin-left:auto;margin-right:auto;">Product Status</div>
+    <h2 class="reveal" style="transition-delay:80ms">Public shell live.<br/>Engine in active hardening.</h2>
+    <p class="lede reveal" style="transition-delay:160ms">Landing is production-safe. The OMC bootstrap is live in-repo with working escrow contracts and governance gates, with packaging and fresh-clone hardening in progress.</p>
+
+    <div class="status-grid reveal" style="transition-delay:240ms">
+      <article class="status-card">
+        <div class="status-label">Landing Surface</div>
+        <div class="status-value">Operational</div>
+        <p class="status-note">Single-file deployable site with clear command path and repository routing.</p>
+      </article>
+      <article class="status-card">
+        <div class="status-label">Escrow Bridge</div>
+        <div class="status-value">Implemented</div>
+        <p class="status-note">Session/token/TTL escrow lifecycle and payload route handlers are wired in the bootstrap engine.</p>
+      </article>
+      <article class="status-card">
+        <div class="status-label">Governance Gate</div>
+        <div class="status-value">Implemented</div>
+        <p class="status-note">Tiered resonance checks and contract enforcement logic are in place for module admission.</p>
+      </article>
+      <article class="status-card">
+        <div class="status-label">Installer Hardening</div>
+        <div class="status-value">In Progress</div>
+        <p class="status-note">Fresh-clone packaging and consistency cleanup (docs/paths/assets) are the next completion milestone.</p>
+      </article>
+    </div>
+
+    <div class="status-links reveal" style="transition-delay:300ms">
+      <a href="https://github.com/Metatronsdoob369/open-model-contracts/tree/main/boxstar-omc-bootstrap" target="_blank" rel="noopener noreferrer">
+        <svg><use href="#ico-github"/></svg> Bootstrap Engine
+      </a>
+      <a href="https://github.com/Metatronsdoob369/open-model-contracts/blob/main/boxstar-omc-bootstrap/docs/PIPELINE.md" target="_blank" rel="noopener noreferrer">
+        <svg><use href="#ico-docs"/></svg> Pipeline Contract
+      </a>
+      <a href="https://github.com/Metatronsdoob369/open-model-contracts/tree/main/boxstar-omc-bootstrap/bridge/src/routes" target="_blank" rel="noopener noreferrer">
+        <svg><use href="#ico-code"/></svg> Bridge Endpoints
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ── Section 4: GET STARTED ── -->
 <section class="start" id="start">
   <div class="container">
@@ -1055,14 +1192,14 @@
       </div>
 
       <div class="start-links">
-        <a href="https://github.com/YOUR_USERNAME/bloxbox-scaffolds" target="_blank">
-          <svg><use href="#ico-github"/></svg> GitHub
+        <a href="https://github.com/Metatronsdoob369/open-model-contracts/tree/main/boxstar-omc-bootstrap" target="_blank" rel="noopener noreferrer">
+          <svg><use href="#ico-github"/></svg> Bootstrap Repo
         </a>
-        <a href="https://www.npmjs.com/package/bloxbox" target="_blank">
-          <svg><use href="#ico-npm"/></svg> npm
+        <a href="https://github.com/Metatronsdoob369/open-model-contracts/blob/main/boxstar-omc-bootstrap/docs/PIPELINE.md" target="_blank" rel="noopener noreferrer">
+          <svg><use href="#ico-docs"/></svg> Pipeline Docs
         </a>
-        <a href="https://discord.gg/YOUR_INVITE" target="_blank">
-          <svg><use href="#ico-discord"/></svg> Discord
+        <a href="https://github.com/Metatronsdoob369/open-model-contracts/tree/main/boxstar-omc-bootstrap/bridge/src" target="_blank" rel="noopener noreferrer">
+          <svg><use href="#ico-code"/></svg> Bridge Source
         </a>
       </div>
     </div>
